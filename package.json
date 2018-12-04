@@ -1,0 +1,24 @@
+{
+  "name": "ts-jest-runner",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "repository": "git@github.com:brieb/ts-jest-runner.git",
+  "author": "Brie <723547+brieb@users.noreply.github.com>",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {
+    "test": "tsc --noEmit",
+    "build": "rimraf lib && tsc",
+    "prepack": "npm run build"
+  },
+  "dependencies": {
+    "jest-worker": "^23.2.0",
+    "typescript": "^3.2.1"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.2"
+  }
+}
