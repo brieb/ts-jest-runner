@@ -2,6 +2,8 @@
   "name": "ts-jest-runner",
   "version": "0.0.0",
   "bin": "./bin/ts-jest-runner.sh",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "repository": "git@github.com:brieb/ts-jest-runner.git",
   "author": "Brie <723547+brieb@users.noreply.github.com>",
   "license": "MIT",

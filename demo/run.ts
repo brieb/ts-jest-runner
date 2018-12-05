@@ -1,7 +1,7 @@
-const fs = require("fs");
-const { pass, fail } = require("../lib/index");
+import fs from "fs";
+import { RunOptions, pass, fail } from "../lib/index";
 
-module.exports = function run({ testPath }) {
+export default function run({ testPath }: RunOptions) {
   const start = Date.now();
   const contents = fs.readFileSync(testPath, "utf8");
   const end = Date.now();
@@ -12,4 +12,4 @@ module.exports = function run({ testPath }) {
   }
   const errorMessage = "Company policies require ⚔️ 🏃 in every file";
   return fail({ start, end, test: { path: testPath, title, errorMessage } });
-};
+}
