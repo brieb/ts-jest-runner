@@ -6,13 +6,10 @@ module.exports = function run({ testPath }) {
   const contents = fs.readFileSync(testPath, "utf8");
   const end = Date.now();
 
+  const title = "Check for ⚔️ 🏃";
   if (contents.includes("⚔️🏃")) {
-    return pass({ start, end, test: { path: testPath } });
+    return pass({ start, end, test: { path: testPath, title } });
   }
   const errorMessage = "Company policies require ⚔️ 🏃 in every file";
-  return fail({
-    start,
-    end,
-    test: { path: testPath, errorMessage, title: "Check for ⚔️ 🏃" },
-  });
+  return fail({ start, end, test: { path: testPath, title, errorMessage } });
 };

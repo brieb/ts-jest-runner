@@ -14,13 +14,21 @@
     "prepack": "npm run build"
   },
   "dependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-typescript": "^7.1.0",
+    "@babel/register": "^7.0.0",
     "commander": "^2.19.0",
     "create-jest-runner": "^0.4.1",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
+    "lodash": "^4.17.11",
     "typescript": "^3.2.1"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.119",
     "@types/node": "^10.12.12",
     "rimraf": "^2.6.2"
   }

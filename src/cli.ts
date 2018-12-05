@@ -2,6 +2,8 @@ import path from "path";
 import jest from "jest";
 import program from "commander";
 
+import "./babel-register";
+
 const version = require("../package.json").version;
 
 program
