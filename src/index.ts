@@ -1,4 +1,5 @@
 import { fail as _fail, pass as _pass, skip as _skip } from "create-jest-runner";
+import { tsJestRunner, TSJestRunnerConfig } from "./api";
 import { Runner, RunOptions } from "./types/run";
 import { TestResult } from "./types/test-result";
 
@@ -13,4 +14,4 @@ const fail = _fail as (params: FailParams) => TestResult;
 type SkipParams = { start: number; end: number; test: TestParam };
 const skip = _skip as (params: SkipParams) => TestResult;
 
-export { Runner, RunOptions, pass, fail, skip, TestResult };
+export { Runner, RunOptions, pass, fail, skip, TestResult, tsJestRunner, TSJestRunnerConfig };

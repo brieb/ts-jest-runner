@@ -1,8 +1,6 @@
-import path from "path";
-import jest from "jest";
 import program from "commander";
-
-import "./babel-register";
+import path from "path";
+import { tsJestRunner } from "./api";
 
 const version = require("../package.json").version;
 
@@ -15,8 +13,7 @@ if (!program.run) {
   program.help();
 }
 
-const jestConfig = path.join(__dirname, "jest-config.js");
-const runFile = require.resolve(path.join(process.cwd(), program.run));
-
-process.env["TS_JEST_RUNNER_RUN_FILE"] = runFile;
-jest.run(["--config", jestConfig]);
+tsJestRunner({
+  runFile: path.join(process.cwd(), program.run),
+  useBabelRegister: true,
+});
