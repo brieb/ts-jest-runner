@@ -2,6 +2,6 @@
   "name": "demo",
   "private": true,
   "scripts": {
-    "jest": "../node_modules/.bin/jest"
+    "runner": "../bin/ts-jest-runner.sh -r ./run"
   }
 }

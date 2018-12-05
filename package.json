@@ -15,6 +15,7 @@
     "prepack": "npm run build"
   },
   "dependencies": {
+    "commander": "^2.19.0",
     "create-jest-runner": "^0.4.1",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
