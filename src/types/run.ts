@@ -1,5 +1,5 @@
-import { TestResult } from "./test-result";
 import { ExtraOptions } from "./extra-options";
+import { TestResult } from "./test-result";
 
 export interface RunOptions {
   /** Path of the file that is going to be tests. */

@@ -1,5 +1,5 @@
 import fs from "fs";
-import { RunOptions, pass, fail } from "../lib/index";
+import { fail, pass, RunOptions } from "../lib/index";
 
 export default function run({ testPath }: RunOptions) {
   const start = Date.now();
