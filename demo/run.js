@@ -1,7 +1,7 @@
 const fs = require("fs");
 const { pass, fail } = require("../lib/index");
 
-module.exports = ({ testPath }) => {
+module.exports = function run({ testPath }) {
   const start = Date.now();
   const contents = fs.readFileSync(testPath, "utf8");
   const end = Date.now();
