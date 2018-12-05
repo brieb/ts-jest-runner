@@ -1,7 +1,9 @@
 import jest from "jest";
 import path from "path";
+import { setTSJestRunnerEnv } from "./env";
 
 export interface TSJestRunnerConfig {
+  rootDir: string;
   runFile: string;
   useBabelRegister?: boolean;
 }
@@ -13,12 +15,13 @@ const defaults = {
 const jestConfig = path.join(__dirname, "jest-config.js");
 
 export function tsJestRunner(config: TSJestRunnerConfig) {
-  const { runFile, useBabelRegister } = { ...defaults, ...config };
+  const { rootDir, runFile, useBabelRegister } = { ...defaults, ...config };
+
+  setTSJestRunnerEnv({ rootDir, runFile });
 
   if (useBabelRegister) {
     require("./babel-register");
   }
 
-  process.env["TS_JEST_RUNNER_RUN_FILE"] = runFile;
   jest.run(["--config", jestConfig]);
 }

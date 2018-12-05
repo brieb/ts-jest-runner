@@ -13,7 +13,10 @@ if (!program.run) {
   program.help();
 }
 
+const rootDir = process.cwd();
+
 tsJestRunner({
-  runFile: path.join(process.cwd(), program.run),
+  rootDir,
+  runFile: path.join(rootDir, program.run),
   useBabelRegister: true,
 });

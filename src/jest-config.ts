@@ -1,8 +1,9 @@
 import path from "path";
 import { defaults } from "jest-config";
+import { getTSJestRunnerEnv } from "./env";
 import { parseTSConfig } from "./parse-tsconfig";
 
-const rootDir = process.cwd();
+const { rootDir } = getTSJestRunnerEnv();
 const { fileNames } = parseTSConfig(rootDir);
 
 module.exports = {
