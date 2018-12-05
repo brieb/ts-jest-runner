@@ -1,8 +1,7 @@
 {
   "name": "ts-jest-runner",
   "version": "0.0.0",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "bin": "./bin/ts-jest-runner.sh",
   "repository": "git@github.com:brieb/ts-jest-runner.git",
   "author": "Brie <723547+brieb@users.noreply.github.com>",
   "license": "MIT",
@@ -19,8 +18,6 @@
     "create-jest-runner": "^0.4.1",
     "jest": "^23.6.0",
     "jest-config": "^23.6.0",
-    "jest-worker": "^23.2.0",
-    "throat": "^4.1.0",
     "typescript": "^3.2.1"
   },
   "devDependencies": {
