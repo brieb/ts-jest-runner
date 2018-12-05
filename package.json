@@ -15,10 +15,14 @@
     "prepack": "npm run build"
   },
   "dependencies": {
+    "create-jest-runner": "~0.4.1",
     "jest-worker": "^23.2.0",
+    "throat": "^4.1.0",
     "typescript": "^3.2.1"
   },
   "devDependencies": {
+    "@types/node": "^10.12.12",
+    "jest": "^23.6.0",
     "rimraf": "^2.6.2"
   }
 }
