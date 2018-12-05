@@ -2,8 +2,7 @@ import ts from "typescript";
 
 export interface ExtraOptions {
   tsCompilerOptions: ts.CompilerOptions;
-  local: LocalExtraOptions;
 }
 
-/** Allow consumers to add additional options. */
+/** Local extra options for consumers. Must be serializable. */
 export type LocalExtraOptions = { [key: string]: string | number };

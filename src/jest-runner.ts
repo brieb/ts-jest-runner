@@ -10,7 +10,7 @@ export = createJestRunner(require.resolve(runFile), {
   getExtraOptions(): ExtraOptions {
     return {
       tsCompilerOptions: options,
-      local: localExtraOptions,
+      ...localExtraOptions,
     };
   },
 });

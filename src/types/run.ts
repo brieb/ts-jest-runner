@@ -1,7 +1,7 @@
-import { ExtraOptions } from "./extra-options";
+import { ExtraOptions, LocalExtraOptions } from "./extra-options";
 import { TestResult } from "./test-result";
 
-export interface RunOptions {
+export interface RunOptions<TLocalExtraOptions extends LocalExtraOptions = {}> {
   /** Path of the file that is going to be tests. */
   testPath: string;
 
@@ -12,7 +12,7 @@ export interface RunOptions {
   globalConfig: any;
 
   /** The return value of the { getExtraOptions } argument of createJestRunner(...) the entry file. */
-  extraOptions: ExtraOptions;
+  extraOptions: ExtraOptions & TLocalExtraOptions;
 
   options: any;
   rawModuleMap: any;
