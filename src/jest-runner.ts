@@ -1,6 +1,15 @@
 import { createJestRunner } from "create-jest-runner";
 import { getTSJestRunnerEnv } from "./env";
+import { parseTSConfig } from "./parse-tsconfig";
+import { ExtraOptions } from "./types/extra-options";
 
-const { runFile } = getTSJestRunnerEnv();
+const { rootDir, runFile } = getTSJestRunnerEnv();
+const { options } = parseTSConfig(rootDir);
 
-export = createJestRunner(require.resolve(runFile));
+export = createJestRunner(require.resolve(runFile), {
+  getExtraOptions(): ExtraOptions {
+    return {
+      tsCompilerOptions: options,
+    };
+  },
+});

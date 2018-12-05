@@ -1,4 +1,5 @@
 import { TestResult } from "./test-result";
+import { ExtraOptions } from "./extra-options";
 
 export interface RunOptions {
   /** Path of the file that is going to be tests. */
@@ -11,7 +12,7 @@ export interface RunOptions {
   globalConfig: any;
 
   /** The return value of the { getExtraOptions } argument of createJestRunner(...) the entry file. */
-  extraOptions: any;
+  extraOptions: ExtraOptions;
 
   options: any;
   rawModuleMap: any;
