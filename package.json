@@ -9,7 +9,8 @@
     "registry": "https://registry.npmjs.org/"
   },
   "scripts": {
-    "test": "tsc --noEmit",
+    "prettier": "./script/prettier.sh --write",
+    "test": "tsc --noEmit && ./script/prettier.sh --list-different",
     "build": "rimraf lib && tsc",
     "prepack": "npm run build"
   },
@@ -30,6 +31,7 @@
   "devDependencies": {
     "@types/lodash": "^4.14.119",
     "@types/node": "^10.12.12",
+    "prettier": "^1.15.3",
     "rimraf": "^2.6.2"
   }
 }
