@@ -6,7 +6,7 @@ import { parseTSConfig } from "./parse-tsconfig";
 const { rootDir } = getTSJestRunnerEnv();
 const { fileNames } = parseTSConfig(rootDir);
 
-module.exports = {
+export = {
   rootDir,
   testMatch: fileNames,
   moduleFileExtensions: [...defaults.moduleFileExtensions, "ts", "tsx"],

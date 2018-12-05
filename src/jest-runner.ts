@@ -3,4 +3,4 @@ import { getTSJestRunnerEnv } from "./env";
 
 const { runFile } = getTSJestRunnerEnv();
 
-module.exports = createJestRunner(require.resolve(runFile));
+export = createJestRunner(require.resolve(runFile));
