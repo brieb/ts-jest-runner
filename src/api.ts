@@ -6,11 +6,13 @@ import { LocalExtraOptions } from "./types/extra-options";
 export interface TSJestRunnerConfig {
   rootDir: string;
   runFile: string;
+  jestOptions?: string[];
   extraOptions?: LocalExtraOptions;
   useBabelRegister?: boolean;
 }
 
 const defaults = {
+  jestOptions: [],
   extraOptions: {},
   useBabelRegister: true,
 };
@@ -18,7 +20,10 @@ const defaults = {
 const jestConfig = path.join(__dirname, "jest-config.js");
 
 export function tsJestRunner(config: TSJestRunnerConfig) {
-  const { rootDir, runFile, extraOptions, useBabelRegister } = { ...defaults, ...config };
+  const { rootDir, runFile, jestOptions, extraOptions, useBabelRegister } = {
+    ...defaults,
+    ...config,
+  };
 
   setTSJestRunnerEnv({ rootDir, runFile, localExtraOptions: extraOptions });
 
@@ -26,5 +31,5 @@ export function tsJestRunner(config: TSJestRunnerConfig) {
     require("./babel-register");
   }
 
-  jest.run(["--config", jestConfig]);
+  jest.run(["--config", jestConfig, ...jestOptions]);
 }
